@@ -15,13 +15,8 @@ defaults:
   run:
     shell: bash
 jobs:
-  fetch:
-    runs-on: ubuntu-latest
-    steps:
-      - run: curl -f -o data/drupal_timeline.json https://raw.githubusercontent.com/weitzman/drupal-timeline/refs/heads/main/drupal-timeline.json
   build:
     runs-on: ubuntu-latest
-    needs: fetch
     env:
       DART_SASS_VERSION: 1.97.1
       GO_VERSION: 1.25.5
@@ -82,6 +77,8 @@ jobs:
           key: hugo-${{ github.run_id }}
           restore-keys:
             hugo-
+      - name: Fetch data
+        run: curl -f -o data/drupal_timeline.json https://raw.githubusercontent.com/weitzman/drupal-timeline/refs/heads/main/drupal-timeline.json
       - name: Build the site
         run: |
           hugo \
