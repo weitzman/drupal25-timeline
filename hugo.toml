@@ -1,0 +1,12 @@
+baseURL = "/"
+languageCode = "en-us"
+title = "Drupal 25th Anniversary Timeline"
+
+[params]
+  description = "Celebrating 25 years of Drupal - A timeline of innovation and community"
+  author = "Drupal Community"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

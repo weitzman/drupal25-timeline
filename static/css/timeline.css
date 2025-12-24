@@ -1,0 +1,357 @@
+/* Drupal 25th Anniversary Timeline - Exact Drupal 2.0 Style */
+
+/* CSS Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: verdana, arial, helvetica, sans-serif;
+    font-size: 12px;
+    background: #666666;
+    color: #000000;
+    line-height: 1.3;
+    padding: 8px;
+}
+
+/* Exact Drupal 2.0 Colors */
+:root {
+    --drupal-bg-gray: #666666;
+    --drupal-content-gray: #999999;
+    --drupal-header-blue: #4A6C92;
+    --drupal-light-blue: #7791B3;
+    --drupal-white: #FFFFFF;
+    --drupal-black: #000000;
+    --drupal-border: #CCCCCC;
+    --drupal-link: #0066CC;
+}
+
+/* Main Container */
+.drupal-container {
+    background: var(--drupal-white);
+    border: 2px solid var(--drupal-black);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Header with Druplicons and playful design */
+.drupal-header {
+    background: var(--drupal-white);
+    padding: 12px 8px;
+    border-bottom: 1px solid var(--drupal-black);
+}
+
+.header-content-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 600px;
+    margin: 0 auto;
+    gap: 20px;
+}
+
+.druplicon-left,
+.druplicon-right {
+    flex-shrink: 0;
+}
+
+.header-druplicon {
+    width: 48px;
+    height: 48px;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.header-druplicon.flipped {
+    transform: scaleX(-1);
+}
+
+.header-text {
+    text-align: center;
+    flex-grow: 1;
+}
+
+.site-logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--drupal-black);
+    margin-bottom: 4px;
+    line-height: 1.1;
+}
+
+.site-slogan {
+    font-size: 12px;
+    color: #666666;
+    font-style: italic;
+    font-weight: normal;
+}
+
+/* Navigation Bar */
+.drupal-nav {
+    background: var(--drupal-content-gray);
+    padding: 4px 8px;
+    border-bottom: 1px solid var(--drupal-black);
+    text-align: center;
+}
+
+.drupal-nav a {
+    color: var(--drupal-black);
+    text-decoration: none;
+    font-size: 12px;
+    margin: 0 4px;
+}
+
+.drupal-nav a:hover {
+    text-decoration: underline;
+}
+
+/* Main Content Layout */
+.drupal-main {
+    background: var(--drupal-content-gray);
+    display: grid;
+    grid-template-columns: 1fr 180px;
+    min-height: 400px;
+}
+
+/* Content Area */
+.drupal-content {
+    background: var(--drupal-content-gray);
+    padding: 8px;
+}
+
+/* Timeline Entry Card - Exact Drupal 2.0.0 Style */
+.timeline-entry {
+    background: var(--drupal-white);
+    border: 1px solid var(--drupal-black);
+    margin-bottom: 8px;
+    padding: 0;
+}
+
+.entry-header {
+    background: var(--drupal-header-blue);
+    color: var(--drupal-white);
+    padding: 4px 8px;
+    font-size: 12px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.entry-title {
+    color: var(--drupal-white);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.entry-title:hover {
+    text-decoration: underline;
+}
+
+.entry-date {
+    font-size: 11px;
+    color: var(--drupal-white);
+    opacity: 0.9;
+}
+
+.entry-content {
+    padding: 8px;
+    background: var(--drupal-white);
+}
+
+.entry-meta {
+    font-size: 11px;
+    color: #666666;
+    margin-bottom: 6px;
+    font-style: italic;
+}
+
+.entry-author {
+    font-weight: bold;
+    color: var(--drupal-black);
+    font-size: 11px;
+}
+
+.entry-author a {
+    color: var(--drupal-link);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.entry-author a:hover {
+    text-decoration: underline;
+}
+
+.entry-description {
+    font-size: 12px;
+    line-height: 1.4;
+    color: var(--drupal-black);
+    margin-top: 4px;
+}
+
+.entry-description p {
+    margin-bottom: 6px;
+}
+
+.entry-description a {
+    color: var(--drupal-link);
+    text-decoration: none;
+}
+
+.entry-description a:hover {
+    text-decoration: underline;
+}
+
+/* All card headers use light gray */
+.entry-header {
+    background: #AAAAAA; /* Light gray for all entries */
+}
+
+/* Sidebar - Year Navigation Only */
+.drupal-sidebar {
+    background: var(--drupal-content-gray);
+    border-left: 1px solid var(--drupal-black);
+    padding: 8px;
+}
+
+.sidebar-block {
+    background: var(--drupal-white);
+    border: 1px solid var(--drupal-black);
+    margin-bottom: 8px;
+}
+
+.sidebar-title {
+    background: var(--drupal-light-blue);
+    color: var(--drupal-white);
+    padding: 4px 6px;
+    font-size: 12px;
+    font-weight: bold;
+    border-bottom: 1px solid var(--drupal-black);
+}
+
+.sidebar-content {
+    padding: 6px;
+}
+
+.year-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.year-links li {
+    margin-bottom: 2px;
+}
+
+.year-links a {
+    color: var(--drupal-link);
+    text-decoration: none;
+    font-size: 12px;
+    display: flex;
+    justify-content: space-between;
+    padding: 1px 0;
+}
+
+.year-links a:hover {
+    text-decoration: underline;
+}
+
+.year-count {
+    color: #666666;
+    font-size: 11px;
+}
+
+/* Footer Navigation */
+.drupal-footer {
+    background: var(--drupal-content-gray);
+    padding: 4px 8px;
+    border-top: 1px solid var(--drupal-black);
+    text-align: center;
+}
+
+.drupal-footer a {
+    color: var(--drupal-black);
+    text-decoration: none;
+    font-size: 12px;
+    margin: 0 4px;
+}
+
+.drupal-footer a:hover {
+    text-decoration: underline;
+}
+
+/* Page Title */
+.content-title {
+    font-size: 13px;
+    font-weight: bold;
+    color: var(--drupal-black);
+    margin-bottom: 8px;
+    background: var(--drupal-white);
+    padding: 6px;
+    border: 1px solid var(--drupal-black);
+}
+
+/* Avatar styling to match era */
+.entry-avatar {
+    float: left;
+    margin-right: 8px;
+    margin-bottom: 4px;
+}
+
+.entry-avatar img {
+    width: 60px;
+    height: 60px;
+    border: 1px solid var(--drupal-border);
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    body {
+        padding: 4px;
+    }
+    
+    .drupal-main {
+        grid-template-columns: 1fr;
+    }
+    
+    .drupal-sidebar {
+        border-left: none;
+        border-top: 1px solid var(--drupal-black);
+    }
+    
+    .entry-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2px;
+    }
+}
+
+/* Year Anchors */
+.year-anchor {
+    position: relative;
+    top: -20px;
+    visibility: hidden;
+    height: 0;
+}
+
+/* Year Section Headers */
+.year-section {
+    background: var(--drupal-white);
+    border: 1px solid var(--drupal-black);
+    margin: 16px 0 8px 0;
+    padding: 6px 8px;
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--drupal-black);
+    background: #E6E6E6;
+}
+
+/* Hide the modern timeline elements */
+.hero,
+.timeline,
+.timeline-footer,
+.admin-header,
+.admin-layout {
+    display: none;
+}
