@@ -15,6 +15,10 @@ defaults:
   run:
     shell: bash
 jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - run: curl -f -o data/drupal_timeline.json https://raw.githubusercontent.com/weitzman/drupal-timeline/refs/heads/main/drupal-timeline.json
   build:
     runs-on: ubuntu-latest
     env:
