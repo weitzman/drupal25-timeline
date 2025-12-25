@@ -27,7 +27,7 @@
 
             <!-- Timeline Entries -->
             {{ $events := .Site.Data.drupal_timeline }}
-            {{ $sortedEvents := sort $events "date" "desc" }}
+            {{ $sortedEvents := sort $events "date" "asc" }}
 
             {{ $currentYear := "" }}
             {{ range $index, $event := $sortedEvents }}
