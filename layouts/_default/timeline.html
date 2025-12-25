@@ -1,7 +1,7 @@
 {{ define "main" }}
 <!-- Exact Drupal 2.0 Layout -->
 <div class="drupal-container">
-    
+
     <!-- Header with site title and Druplicons -->
     <header class="drupal-header">
         <div class="header-content-wrapper">
@@ -17,30 +17,30 @@
             </div>
         </div>
     </header>
-    
-    
+
+
     <!-- Main Content Area -->
     <div class="drupal-main">
-        
+
         <!-- Content Column -->
         <main class="drupal-content">
-            
+
             <!-- Timeline Entries -->
             {{ $events := .Site.Data.drupal_timeline }}
             {{ $sortedEvents := sort $events "date" "desc" }}
-            
+
             {{ $currentYear := "" }}
             {{ range $index, $event := $sortedEvents }}
             {{ $eventYear := dateFormat "2006" $event.date }}
-            
+
             <!-- Add year anchor if this is the first event of a new year -->
             {{ if ne $currentYear $eventYear }}
             {{ $currentYear = $eventYear }}
             <div id="year-{{ $eventYear }}" class="year-anchor"></div>
             {{ end }}
-            
+
             <article class="timeline-entry" data-priority="{{ $event.priority }}">
-                
+
                 <!-- Entry Header - Blue bar with title and date -->
                 <header class="entry-header">
                     <div class="entry-title">
@@ -52,50 +52,50 @@
                     </div>
                     <div class="entry-date">{{ dateFormat "2006-01-02" $event.date }}</div>
                 </header>
-                
+
                 <!-- Entry Content -->
                 <div class="entry-content">
-                    
+
                     {{ if $event.username }}
                     <div class="entry-meta">
                         Posted by <span class="entry-author"><a href="https://www.drupal.org/u/{{ $event.username }}">{{ $event.username }}</a></span> on {{ dateFormat "Monday, January 2, 2006" $event.date }}
                     </div>
                     {{ end }}
-                    
+
                     <div class="entry-body">
                         {{ if $event.avatar }}
                         <div class="entry-avatar">
                             <img src="{{ $event.avatar }}" alt="{{ $event.username }}" loading="lazy">
                         </div>
                         {{ end }}
-                        
+
                         <div class="entry-description">
                             {{ $event.description | markdownify }}
                         </div>
-                        
+
                         <div style="clear: both;"></div>
                     </div>
-                    
+
                     {{ if $event.thumbnail }}
                     <div style="margin-top: 8px;">
                         <img src="{{ $event.thumbnail }}" alt="Event screenshot" loading="lazy" style="max-width: 100%; border: 1px solid #CCCCCC;">
                     </div>
                     {{ end }}
-                    
+
                     {{ if $event.href }}
                     <div style="margin-top: 6px; font-size: 11px;">
                         <a href="{{ $event.href }}">read more</a>
                     </div>
                     {{ end }}
-                    
+
                 </div>
             </article>
             {{ end }}
         </main>
-        
+
         <!-- Sidebar - Year Navigation Only -->
         <aside class="drupal-sidebar">
-            
+
             <!-- Year Navigation Block -->
             <div class="sidebar-block">
                 <div class="sidebar-title">navigate by year</div>
@@ -128,7 +128,7 @@
                     </ul>
                 </div>
             </div>
-            
+
             <!-- Additional Navigation Block -->
             <div class="sidebar-block">
                 <div class="sidebar-title">drupal resources</div>
@@ -142,15 +142,15 @@
                     </ul>
                 </div>
             </div>
-            
+
         </aside>
-        
+
     </div>
-    
+
     <!-- Footer Attribution -->
     <footer class="drupal-footer">
-        Site by <a href="https://drupal.org/user/23">Moshe Weitzman</a>. <a href="https://github.com/weitzman/drupal-timeline">Timeline data is publicly available. PRs welcome</a>.
+        <a href="https://github.com/weitzman/drupal25-timeline">Site</a> by <a href="https://drupal.org/user/23">Moshe Weitzman</a>. <a href="https://github.com/weitzman/drupal-timeline">Timeline data is publicly available. PRs welcome</a>.
     </footer>
-    
+
 </div>
 {{ end }}
